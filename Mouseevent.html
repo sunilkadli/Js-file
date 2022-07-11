@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .square{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <input onkeypress="press()"  type="text" onselect="Select()" placeholder="focus me">
+     
+    <!-- 3.onselect : -->
+
+    <div class="square" onmouseout="bg1()" onmouseover="bg()"></div>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto minima tempore dolorem dolore sit quod eaque. In eligendi nulla impedit obcaecati modi repellendus mollitia nisi fuga voluptatibus, suscipit reprehenderit quam.</p>
+    <script>
+        // 3.onselect :
+        function Select(){
+            alert("user selected text");
+        }
+
+        // mouse events :
+            // onmouseover
+            // onmouseout
+            // onmousemove
+            // onmouseup
+            // onmousedown
+            // onmousewheel
+
+            // onmouseover :
+            function Mover(){
+                alert("mouse over");
+            }
+
+            function bg(){
+                let square = document.querySelector(".square");
+                square.style.backgroundColor = "green"
+            }
+
+            // onmouseout :
+            function bg1(){
+                let square = document.querySelector(".square");
+                square.style.backgroundColor = "red"
+            }
+
+            // keyboard event
+            // onkeyup
+            // onkeydown
+            // onkeypress
+
+             // onkeypress:
+             function press(){
+                 alert("key pressed")
+             }
+
+    </script>
+</body>
+</html>

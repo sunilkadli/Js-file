@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIME</title>
+    <link rel="stylesheet" href="">
+
+    <style>
+        body{
+            margin: 0px;
+            height: 100vh;
+            background-color: goldenrod;
+            font-family: sans-serif;
+        }
+
+        #btn{
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="showTime()" id="btn">SHOW TIME</button> 
+
+    <h1>TIME :</h1>
+    <h1 id="ctime"></h1>
+    <script>
+
+        function showTime(){
+            let h1 = document.getElementById("ctime")
+            let time = new Date().toLocaleTimeString()
+            h1.innerHTML = time;
+        }
+
+        setInterval(showTime , 1000)
+     
+       
+    </script>
+
+   
+</body>
+</html>

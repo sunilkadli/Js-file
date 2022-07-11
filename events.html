@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+
+    <pre>
+    Event handlers : Event handlers are the JavaScript code that invokes a specific piece of code when a particular action happens on an HTML element.
+    button events:
+        onclick / click
+        ondblclick / dblclick
+    input events:
+        onfocus / focus
+        onblur / blur
+        onselect / select
+    mouse events:
+        onmouseover / mouseover
+        onmouseout / mouseout
+        onmosemove / mousemove
+    keyboard events:
+        onkeyup / keyup
+        onkeydown / keydown
+        onkeypress / keypress
+
+    onload
+    onscroll
+    ondrag
+    ondrop
+    </pre>
+
+    <button id="wish">click me to get a wish</button>
+ <br> <br>
+    <button id="wish1">Double click me to get a wish</button>
+    <br> <br>
+    <p>Hover curser on me to get today's Date</p>
+<br>
+    <p id="out">Take out curser from me to see changes</p>
+<br>
+    <p id="in-out">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore minima consectetur ullam illum ut harum quaerat ipsam laboriosam sunt veniam. Consectetur natus et sequi provident repudiandae, ducimus sit? Ipsam, exercitationem?z</p>
+
+
+    <script>
+       
+        // click
+        let wish = document.getElementById("wish");
+        wish.addEventListener("click" , () => {
+            alert("Gud Morning")
+        })
+
+        //dblclick
+        let wish1 = document.getElementById("wish1");
+        wish1.addEventListener("dblclick" , () => {
+            alert("Gud Evening")
+        })
+
+        // mouseover
+        let datePara = document.querySelector("p");
+        datePara.addEventListener("mouseover" , () => {
+            let date = new Date().toLocaleDateString()
+            alert("Todays Date is "+date);
+        })
+
+        // mouseout
+        let out = document.getElementById('out');
+        out.addEventListener("mouseout" , ()=>{
+            out.style.color ="blue"
+        })
+
+        let in_out = document.getElementById("in-out");
+        in_out.addEventListener("mouseover" , () => {
+            in_out.style.backgroundColor = "green"
+        })
+       
+        in_out.addEventListener("mouseout" , () => {
+            in_out.style.backgroundColor = "red"
+        })
+           
+       
+
+
+       
+    </script>
+   
+</body>
+</html>

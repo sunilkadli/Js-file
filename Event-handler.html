@@ -1,0 +1,83 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+<!-- Event-handlers in javascript :
+    these are functions which are used to perform the actions on the webpage based on the user activities
+    Event hnadlers helps in interacting with the web pages
+
+    Types of types of event-handlers:
+    button events
+    input events
+    mouse events
+    keyboard events
+    form event
+    etc... ondrag event , ondrop event , onload event , onchange event
+-->
+<!-- button events:
+        1. onclick
+        2. ondblclick
+
+     input events:
+        1.onfocus
+        2.onblur
+        3.onselect
+-->
+
+<button onclick="Click()">click me 😇 </button>
+<button onclick="getDate()"> Today's Date </button>
+
+<button ondblclick="doubleClick()">Double click on me</button>
+<button ondblclick="getTime()">Double click on me to get Time</button>
+
+<input id="textfield" onblur="changeBg1()" onfocus="changeBg()" type="text" placeholder="focus me ✈ ...">
+
+<script>
+    // 1. onclick
+    function Click(){
+        alert("clicked")
+        // console.log("clicked");
+    }
+
+    function getDate(){
+        let date = new Date().toLocaleDateString()
+        confirm("Today's date is "+ date)
+    }
+
+    // 2. ondblclick:
+
+    function doubleClick(){
+        alert("double clicked")
+    }
+
+    function getTime(){
+        let time = new Date().toLocaleTimeString()
+        confirm("Now time is "+ time)
+    }
+
+    // 1.onfocus
+    function Focus(){
+        console.log("Focused")
+    }
+
+    function changeBg(){
+       let textfield = document.getElementById("textfield")  
+       textfield.style.cssText = "background-color : tomato ; outline:none ; border:1px grey solid ;border-radius:3px"
+    }
+
+    // 2.onblur
+    function changeBg1(){
+       let textfield = document.getElementById("textfield")  
+       textfield.style.cssText = "background-color : white; border:1px grey solid ;border-radius:3px"
+    }
+</script>
+
+
+</body>
+</html>

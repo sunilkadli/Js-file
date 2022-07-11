@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            margin: 0px;
+            height: 100vh;
+            background-color: goldenrod;
+            font-family: sans-serif;
+        }
+        form{
+            background-color: cadetblue;
+            width: 300px;
+            text-align: center;
+            margin: auto;
+            margin-top: 200px;
+            padding: 30px;
+            border-radius: 5px;
+        }
+        input{
+            padding: 15px 20px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            margin: 5px;
+            width: 200px;
+        
+        }
+        small{
+            margin-left: -166px;
+        }
+        #submit-btn{
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+        }
+        #msg{
+            margin-left: -80px;
+        }
+        #error{
+            margin-left: -100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="" onsubmit="return valid()">
+        <div>
+            <small>Username :</small><br>
+            <input type="text" placeholder="Enter username" id="un" name="username"><br>
+
+            <small id="msg" style="color: red; font-weight: bold;display: none;">user name is mandatory*</small>
+            <br>
+
+            <small>Password:</small><br>
+            <input type="password" placeholder="Enter password" id="pwd" name="password"><br><br>
+
+            <small style="margin-left: -120px;">Confirm password:</small><br>
+            <input type="password" placeholder="Re Enter password" id="cpwd" name="Cpassword"><br><br>
+            
+            <small id="error" style="color: red; font-weight: bold;display: none;">password missmatch</small>
+            <br>
+
+            <small>Mobile Nbr:</small><br>
+            <input type="text" placeholder="Enter Mobile Number" id="mobile" name="mobile"><br><br>
+            
+                
+            <button id="submit-btn" type="submit">submit</button>
+        </div>
+    </form>
+
+    <script>
+        
+        
+        // function valid(){
+        //     let msg = document.getElementById("msg");
+        //     let username = document.getElementById("un").value
+
+        //     let password = document.getElementById("pwd").value
+        //     let cpassword = document.getElementById("cpwd").value
+        //     let error = document.getElementById("error");
+            
+        //     if(username == "" || password != cnfmpass){
+        //         msg.style.display = "inline"
+        //         error.style.display = "inline"
+        //         return false;// this will avoid form from submitting when the error occurs
+        //     }else{
+        //         alert("form is submitted")
+        //         return true;
+        //     }
+
+            
+        // }
+
+        //!  validation using Regular expression:
+        // Regular expression : Regular expressions are patterns used to match character combinations in strings. In JavaScript, regular expressions are also objects 
+        //  Declaration:
+
+            // let regExp = new RegExp();
+            // console.log(regExp);
+
+        // es6 declaration:
+            // let regExp = / /;
+
+            
+            function valid(){
+                let regExp = /^([A-Za-z0-9@]{6})+$/;
+                let username = document.getElementById("un").value
+
+                let result = regExp.test(username)
+                 if(result){
+                    alert("username pattern is matching")
+                    return true
+                }else{
+                    alert("username pattern is not matching")
+                    return false
+                }
+            }
+
+        // patterns:
+
+            [a-z]
+            [A-Z]
+            [0-9]
+            [A-Za-z]
+            [A-Z0-9]
+            [a-z0-9]
+            [A-Za-z0-9]
+
+        // symbols:
+            //  ^ - starts with 
+            // + - one are more occurance
+            // $ - ends with
+            // * - zero or more occurance
+            // {} - to specify the length
+// ! mobile number validation using regular expression;
+            // function valid(){
+            //     let regExp = /^([6-9][0-9]{9})+$/;
+            //     let mobile = document.getElementById("mobile").value
+
+            //     let result = regExp.test(mobile)
+            //     if(result){
+            //         alert("valid mobile number")
+            //         return true
+            //     }else{
+            //         alert("invalid mobile number")
+            //         return false
+            //     }
+            // }
+
+
+    </script>
+</body>
+</html>
